@@ -1,0 +1,26 @@
+DECLARE PARAMETER steps.
+
+UNTIL steps = 0 {
+
+	IF SHIP:ELECTRICCHARGE > 50 {
+		TOGGLE AG2.
+		WAIT 0.3.
+		TOGGLE AG2.
+
+		TOGGLE AG4.
+		WAIT 0.3.
+		TOGGLE AG4.
+
+		TOGGLE AG1.
+		WAIT 0.3.
+		TOGGLE AG1.
+
+		TOGGLE AG3.
+		WAIT 0.3.
+		TOGGLE AG3.
+		
+		SET steps TO steps - 1.
+	} ELSE {
+		SET steps TO 0.	
+	}
+}.
